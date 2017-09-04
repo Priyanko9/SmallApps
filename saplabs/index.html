@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="Github">
+    <head>
+        <link rel="stylesheet" type="text/css" href="app.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+    </head>
+    <body ng-controller="searchController">
+
+        
+        <div class="container">
+          <div class="row topbar">
+            <div class="col-xs-12" >
+               <div>
+                  TopGit - finding the best github projects! 
+               </div>
+                <div class="right found">
+                     We have found {{result.total_count}} repository results in {{language}}
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-8">
+                <div id="autocomplete">
+                    
+                    <input type="search" id="search" list="searches" placeholder="Search (by language)">
+                </div>
+                <div ng-repeat="r in result.items" class="items">
+                    <a href="{{r.html_url}}" target="_blank">{{r.full_name}}</a> <br/><br/>
+                    <div>
+                        language: {{r.language}} | {{r.description}}
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-xs-4">
+                <div class="round">RateLimit</div>
+                <div class="rate">{{rateLimitRemaining}} out of {{rateLimit}}</div>  
+                <div class="round">Stars</div>  
+                <div class="slider"><input type="range" min="0" max="1000" value="500" id="slider"  ng-model="star"> 
+                    <div>{{star}}</div>
+                </div>  
+            </div>
+            
+          </div>
+            <div class="row bottom">
+                <div>
+                    <button id="nxt" class="button">load Next items</button> 
+                </div>
+            </div>
+         
+        </div>
+        
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="app.js"></script>
+		
+	</body>
+</html>
+
