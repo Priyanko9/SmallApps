@@ -1,0 +1,57 @@
+.app{
+    width: 900px;
+    margin: 50px auto;
+    padding: 25px;
+    text-align: center;
+    background-color: yellowgreen;
+}
+
+.addTodo input{
+    width: 600px;
+    height: 30px;
+    margin: 10px;
+    outline: none;
+}
+.addTodo span{
+    margin: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    background-color: white;
+    cursor: pointer;
+} 
+.todoViewContainer{
+    margin: 10px;
+}
+.todoView{
+   background-color: yellow;
+   margin-bottom: 2px; 
+   height: 50px;
+}
+.rightPanel{
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+}
+.rightPanel:hover{
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.todotext{
+   float: left;
+   margin: 10px; 
+}
+.editTodo{
+    width: 600px;
+    height: 30px;
+    margin: 10px;
+    outline: none;
+}
+.todotextCompleted{
+   float: left;
+   margin: 10px; 
+   text-decoration: line-through;    
+}
